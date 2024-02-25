@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function pulaLinha(){
+            
+            document.write("<br>");
+            document.write("<hr>");
+            document.write("<br>");
+        };
+
+        function mostrar(informacao){
+
+            document.write("<big>" + informacao +"</big>");
+            pulaLinha();
+        }
+
+        var quantidadeFamiliar = parseInt(prompt("Quantidade de familiares: "));
+
+        var numero = 1;
+        var totalIdade = 0;
+
+        while(numero <= quantidadeFamiliar){
+            
+            var idade =parseInt(prompt("Informe a do " +numero+ " familiar: "));
+            totalIdade = totalIdade + idade;
+            numero++;
+        };
+
+        var mediaIdade = totalIdade/numero;
+        mostrar(" A media de idade do seus familiares: " + Math.round(mediaIdade) );
+
+
+
+
+ 
+       
+    </script>
+    
+</body>
+</html>

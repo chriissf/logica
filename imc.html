@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function pulaLinha() {
+
+            document.write("<br>");
+            document.write("<br>");
+        };
+
+        function mostrar(informacao) {
+
+            document.write("<big>" + informacao + "</big>");
+            pulaLinha();
+        }
+
+        function calculaImc(peso, altura) {
+
+            var imc = peso / (altura * altura);
+
+            // Arredondando para duas casas decimais
+            imc = imc.toFixed(2);
+
+            var msg;
+
+
+
+            if (imc < 18.5) {
+
+                msg = "Magreza";
+
+            }
+
+            else if (imc >= 18.5 && imc <= 24.9) {
+
+                msg = "Normal";
+
+
+            } else if (imc >= 25 && imc <= 29.9) {
+
+                msg = "Sobrepeso";
+
+
+            } else if (imc >= 30.0 && imc <= 39.9) {
+
+                msg = "Obesidade";
+
+
+            } else if (imc >= 40.0) {
+
+                msg = "Obesidade grave!";
+
+            }
+
+            else {
+
+                msg = "Outras condições!";
+            }
+
+            return " Imc " + imc + " - " + msg;
+
+
+
+
+
+
+        }
+        
+        // entrada teclado
+
+        var alturaInformada = prompt("Informe sua altura: ");
+        var pesoInformado = prompt("Informe sua peso: ");
+
+        // Convertendo as entradas para números
+        var altura = parseFloat(alturaInformada);
+        var peso = parseFloat(pesoInformado);
+
+
+        // Verificando se as entradas são válidas
+
+        if (isNaN(altura) || isNaN(peso) || altura <= 0 || peso <= 0) {
+
+            mostrar("Por favor ,insira valor valido para altura e peso");
+        } else {
+            //chamando a função para as entradas
+            
+            var resultadoImc = calculaImc(peso, altura);
+            mostrar(resultadoImc);
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function pulaLinha() {
+
+            document.write("<br>");
+            document.write("<br>");
+        };
+
+        function mostrar(informacao) {
+
+            document.write("<big>" + informacao + "</big>");
+            pulaLinha();
+        }
+
+        var vitorias = parseInt(prompt ("Entre com o numero de vitorias"));
+
+
+        var empates = parseInt(prompt ("Entre com o numero de empates. "));
+
+        var vitoriasAnoPassado = parseInt(prompt ("Digite o numero total de Pontos ano passado"))
+
+      
+
+        var pontos = vitorias * 3 + empates;
+        
+        mostrar (" O  ponto do seu time é " + pontos);
+
+        if ( pontos > vitoriasAnoPassado){
+       
+        mostrar("Seu time estar melhor que ano passado.");
+
+        };
+        if (pontos < vitoriasAnoPassado){
+        mostrar("Seu time estar pior que o ano passado.");
+        };
+        if (pontos == vitoriasAnoPassado){
+        mostrar("Seu time estar igual o ano passado.");
+        };
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

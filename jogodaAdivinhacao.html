@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function pulaLinha() {
+            document.write("<br>");
+            document.write("<br>");
+        };
+
+        function mostrar(informacao) {
+            document.write("<big>" + informacao + "</big>");
+            pulaLinha();
+        }
+
+        function sorteia(n) { // Modificação feita aqui
+            return Math.round(Math.random() * n);
+            
+        }
+        var tentativa = 1;
+       
+        var numeroPensado = sorteia(100); // Sorteando o número entre 0 e 100
+        console.log(numeroPensado);
+
+        while(tentativa <= 3){
+        
+        var chute = parseInt(prompt("Digite seu chute!"));
+        tentativa++;  
+
+
+            if (chute === numeroPensado) {
+
+            mostrar("Você acertou!");
+
+            break; 
+
+             } else if (chute > numeroPensado) {
+
+                mostrar("Você errou, o número pensado é menor que o chute.");
+
+             } else {
+
+                mostrar("Você errou, o número pensado é maior que o chute.");
+            
+            }
+        
+        }
+
+        if(tentativa > 3){
+
+            mostrar("Suas tentativas acabaram!O numero pensado é : " + numeroPensado);
+
+        }else{
+
+            mostrar("Fim!");
+        }
+        
+        
+
+        
+
+    </script>
+
+</body>
+
+</html>
