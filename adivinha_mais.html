@@ -13,21 +13,83 @@
 
     <script>
 
+        function sorteia() {
 
-        var segredo = Math.round(Math.random()*10);
+            return Math.round(Math.random() * 10);
 
-        console.log(segredo);
+        }
+
+        function sorteiaNumeros(quantidade) {
+
+            var segredos = [];
+            var numeros = 1;
+
+
+            while (numeros <= quantidade) {
+
+
+                var numeroAleatorio = sorteia();
+
+                if (numeroAleatorio !== 0) {
+
+                    var achou = false;
+
+                    for (var posicao = 0; posicao < segredos.length; posicao++) {
+
+                        if (segredos[posicao] == numeroAleatorio) {
+
+                            achou = true;
+                            break;
+                        }
+                    }
+
+                    if (achou == false) {
+
+                        segredos.push(numeroAleatorio);
+                        numeros++;
+
+                    }
+
+
+                }
+
+            }
+
+            return segredos;
+
+        }
+        var segredos = sorteiaNumeros(5);
+
+
+        console.log(segredos);
+
+
+        console.log(segredos);
         //nome da variavel pode ser qualquer coisa (chamo a função html)
+
         var input = document.querySelector('input');
         input.focus();
-        
+
 
         function verifica() {
-            if (input.value == segredo) {
-                alert("vc acertou!!!!")
-            } else {
 
-                alert("você errou!!!")
+            var achou = false;
+
+            for (const element of segredos) {
+
+                if (input.value == element) {
+
+                    alert("vc acertou!!!!");
+                    achou = true;
+                    break;
+
+                }
+
+            }
+
+            if (achou == false) {
+
+                alert("vc ERROU!!!!");
             }
 
             input.value = "";
